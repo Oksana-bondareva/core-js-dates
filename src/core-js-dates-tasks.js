@@ -197,7 +197,8 @@ function getCountWeekendsInMonth(/* month, year */) {
  */
 function getWeekNumberByDate(date) {
   const oneJanuary = new Date(date.getFullYear(), 0, 1);
-  const numberOfDays = (date - oneJanuary) / (24 * 60 * 60 * 1000);
+  const day = 24 * 60 * 60 * 1000;
+  const numberOfDays = (date - oneJanuary) / day;
   const result = Math.ceil((oneJanuary.getDay() + 1 + numberOfDays) / 7);
   return result;
 }
